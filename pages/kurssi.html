@@ -5,11 +5,22 @@
     <title>JSON-sivu</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
-    <div id="vastaus">
-        <script src='oma.js'></script>
-    </div>
+    <h1 id="virhe"></h1>
+    <h1 id="otsikko"></h1>
+    <h2 id="kuvaus"></h2>
+    <img id="kuva" src="" alt="Kuva luokkahuoneesa">
+    <div id="opintojakso"></div>
+    <div id="sisaltojatekniikat"></div>
 
+    <!-- Määritellään mistä tiedostosta haetaan JavaScript-funktiot-->
+    <script src='../scripts/oma.js'></script>
+
+    <script>
+        // Tämä funktio hakee ja esittää JSON-tietueen tiedot
+        haeData()
+    </script>
 </body>
