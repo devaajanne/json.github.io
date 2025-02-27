@@ -1,0 +1,15 @@
+{
+  "nimi": "Digitekniikat",
+  "osallistuja_lkm": 5,
+  "osallistujat": [
+    { "etunimi": "Antti", "sukunimi": "Autio" },
+    { "etunimi": "Jenni", "sukunimi": "Vartiainen" },
+    { "etunimi": "Antti", "sukunimi": "Tuisku" },
+    { "etunimi": "Erika", "sukunimi": "Vikman" },
+    { "etunimi": "Tuure", "sukunimi": "Kilpeläinen" }
+  ],
+  "toteutus_alkaa": "13.1.2025",
+  "toteutus_loppuu": "14.3.2025",
+  "kesto_viikkoina": 8,
+  "kuva": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+}
