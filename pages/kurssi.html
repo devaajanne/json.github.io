@@ -10,6 +10,36 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-dark static-top" role="navigation">
+        <div class="container-fluid">
+
+            <!--Sivuston nimi ja linkki, joka vie etusivulle-->
+            <a class="navbar-brand text-white" href="home.html"><span aria-label="Polo Adventures homepage"></span>JSON</a>
+
+            <!--Nappi hampurilaisvalikolle, näkyy keskisuurilla ruuduilla-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar"
+                aria-controls="collapsible-navbar" aria-expanded="false" aria-label="Navigation bar">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+
+            <!--Navigointilinkit, näkyvät isoilla ruuduilla-->
+            <!--Muuttuu hampurilaisvalikoksi keskisuurilla(md) näytöillä-->
+            <div class="collapse navbar-collapse" id="collapsible-navbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <h5><a class="nav-link text-white" href="home.html">Home</a></h5>
+                    </li>
+                    <li class="nav-item">
+                        <h5><a class="nav-link text-white" href="kurssi.html" aria-current="page">Kurssi</a></h5>
+                    </li>
+                    <li class="nav-item">
+                        <h5><a class="nav-link text-white" href="toteutus.html">Toteutus</a></h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <h1 id="virhe"></h1>
     <h1 id="otsikko"></h1>
     <h2 id="kuvaus"></h2>
