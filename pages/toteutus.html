@@ -14,7 +14,8 @@
         <div class="container-fluid">
 
             <!--Sivuston nimi ja linkki, joka vie etusivulle-->
-            <a class="navbar-brand text-white" href="home.html"><span aria-label="Polo Adventures homepage"></span>JSON</a>
+            <a class="navbar-brand text-white" href="home.html"><span
+                    aria-label="Polo Adventures homepage"></span>JSON</a>
 
             <!--Nappi hampurilaisvalikolle, näkyy keskisuurilla ruuduilla-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar"
@@ -39,5 +40,20 @@
             </div>
         </div>
     </nav>
+
+    <h1 id="virhe"></h1>
+    <img id="kuva" src="" alt="Kuva silmälaseista tietokoneen ruudun edessä">
+    <h1 id="nimi"></h1>
+    <h2 id="kesto"></h2>
+    <h3 id="osallistujia"></h3>
+    <div id="osallistujat"></div>
+
+    <!-- Määritellään mistä tiedostosta haetaan JavaScript-funktiot-->
+    <script src='../scripts/toteutus.js'></script>
+
+    <script>
+        // Tämä funktio hakee ja esittää JSON-tietueen tiedot
+        haeToteutusData()
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
