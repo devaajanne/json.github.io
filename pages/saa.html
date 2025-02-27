@@ -46,5 +46,31 @@
         </div>
     </nav>
 
+    <!--Tästä alkaa grid kolmelle säätietokortille-->
+    <div class="container">
+        <div class="row">
+            <!--Määritellään sääkorttien ominaisuudet-->
+            <div class="col-md-4">
+                <div id="helsinkisaa" class="card"></div>
+            </div>
+            <div class="col-md-4">
+                <div id="tamperesaa" class="card"></div>
+            </div>
+            <div class="col-md-4">
+                <div id="oulusaa" class="card"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Määritellään mistä tiedostosta haetaan JavaScript-funktiot-->
+    <script src='../scripts/saa.js'></script>
+
+    <script>
+        // Tämä funktio hakee ja esittää JSON-tietueen tiedot
+        haeSaaData(60.1695, 24.9355) // Helsinki
+        haeSaaData(61.4991, 23.7871) // Tampere
+        haeSaaData(65.0124, 25.4682) // Oulu
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
