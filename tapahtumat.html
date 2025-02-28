@@ -2,7 +2,7 @@
 <html lang="fi">
 
 <head>
-    <title>JSON: toteutus</title>
+    <title>JSON: tapahtumat</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../styles/style.css">
@@ -14,7 +14,7 @@
         <div class="container-fluid">
 
             <!--Sivuston nimi ja linkki, joka vie etusivulle-->
-            <a class="navbar-brand text-white" href="home.html"><span aria-label="JSON kotisivu"></span>JSON</a>
+            <a class="navbar-brand text-white" href="index.html"><span aria-label="JSON kotisivu"></span>JSON</a>
 
             <!--Nappi hampurilaisvalikolle, näkyy keskisuurilla ruuduilla-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar"
@@ -27,16 +27,17 @@
             <div class="collapse navbar-collapse" id="collapsible-navbar">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <h5><a class="nav-link text-white" href="home.html">Aloitus</a></h5>
+                        <h5><a class="nav-link text-white" href="index.html">Aloitus</a></h5>
                     </li>
                     <li class="nav-item">
                         <h5><a class="nav-link text-white" href="kurssi.html">Kurssi</a></h5>
                     </li>
                     <li class="nav-item">
-                        <h5><a class="nav-link text-white" href="toteutus.html" aria-current="page">Toteutus</a></h5>
+                        <h5><a class="nav-link text-white" href="toteutus.html">Toteutus</a></h5>
                     </li>
                     <li class="nav-item">
-                        <h5><a class="nav-link text-white" href="tapahtumat.html">Tapahtumat</a></h5>
+                        <h5><a class="nav-link text-white" href="tapahtumat.html" aria-current="page">Tapahtumat</a>
+                        </h5>
                     </li>
                     <li class="nav-item">
                         <h5><a class="nav-link text-white" href="saa.html">Sää</a></h5>
@@ -55,27 +56,20 @@
     <!--Määritetään paikka JSON-datalle ja mahdolliselle virheilmoitukselle-->
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h1 id="toteutusVirhe"></h1>
-                <h1 id="nimi"></h1>
-                <h2 id="kesto"></h2>
-                <h3 id="osallistujia"></h3>
-                <div id="osallistujat"></div>
-            </div>
-            <div class="col-md-6">
-                <img id="kuva" src="" class="d-block w-100" style="margin-top: 25px"
-                    alt="Kuva silmälaseista tietokoneen ruudun edessä">
+            <div class="col-12-md">
+                <div id="tapahtumatVirhe"></div>
+                <div id="tapahtumat"></div>
             </div>
         </div>
     </div>
 
 
     <!-- Määritellään mistä tiedostosta haetaan JavaScript-funktiot-->
-    <script src='../scripts/toteutus.js'></script>
+    <script src='../scripts/tapahtumat.js'></script>
 
     <script>
         // Tämä funktio hakee ja esittää JSON-tietueen tiedot
-        haeToteutusData()
+        haeTapahtumaData()
     </script>
 
     <!--Tuodaan Bootstrap-->
