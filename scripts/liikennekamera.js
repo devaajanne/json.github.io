@@ -9,7 +9,7 @@ function naytaLiikennekameraData(data) {
     let imgURL = `https://weathercam.digitraffic.fi/${data.presets[i].id}.jpg`;
     // Aika oikeaan formaattiin
     liikennekamerakuvat += `<h4>${dayjs(data.presets[i].measuredTime).format("HH.mm")}</h4>`;
-    liikennekamerakuvat += `<img src=${imgURL} class="d-block w-100" style="margin-bottom: 25px;">`;
+    liikennekamerakuvat += `<img src=${imgURL} alt="Liikennekamerakuva" class="d-block w-100" style="margin-bottom: 25px;">`;
   }
   // Esitetään data ja kuvat oikeassa kohtaa sivua
   document.getElementById("liikennekamerat").innerHTML = liikennekamerakuvat;
