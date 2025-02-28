@@ -2,16 +2,14 @@ function naytaToteutusData(data) {
   document.getElementById("kuva").src = data.kuva;
   document.getElementById("nimi").textContent = data.nimi;
 
-  let kestoJaAika = "Ajankohta: ";
-  kestoJaAika += data.toteutus_alkaa + " - " + data.toteutus_loppuu;
-  kestoJaAika += " (" + data.kesto_viikkoina + " viikkoa)";
+  let kestoJaAika = `Ajankohta: ${data.toteutus_alkaa}-${data.toteutus_loppuu} (${data.kesto_viikkoina} viikkoa)`;
   document.getElementById("kesto").textContent = kestoJaAika;
 
-  document.getElementById("osallistujia").textContent = "Osallistujia: " + data.osallistuja_lkm;
+  document.getElementById("osallistujia").textContent = `Osallistujia: ${data.osallistuja_lkm}`;
 
   let osallistujat = "<ul>";
   for (let i = 0; i < Object.keys(data.osallistujat).length; i++) {
-    osallistujat += "<li>" + data.osallistujat[i].etunimi + " " + data.osallistujat[i].sukunimi + "</li>";
+    osallistujat += `<li>${data.osallistujat[i].etunimi} ${data.osallistujat[i].sukunimi}</li>`;
   }
   osallistujat += "</ul>";
   document.getElementById("osallistujat").innerHTML = osallistujat;
