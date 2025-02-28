@@ -1,4 +1,6 @@
 function naytaToteutusData(data) {
+
+  // Tuodaan dataa JSON-tiedostosta
   document.getElementById("kuva").src = data.kuva;
   document.getElementById("nimi").textContent = data.nimi;
 
@@ -7,17 +9,23 @@ function naytaToteutusData(data) {
 
   document.getElementById("osallistujia").textContent = `Osallistujia: ${data.osallistuja_lkm}`;
 
+  // Käydään läpi osallistuja lista ja muutetaan HTML-listaksi
   let osallistujat = "<ul>";
   for (let i = 0; i < Object.keys(data.osallistujat).length; i++) {
     osallistujat += `<li>${data.osallistujat[i].etunimi} ${data.osallistujat[i].sukunimi}</li>`;
   }
   osallistujat += "</ul>";
+
+  // Esitetään data oikeassa kohtaa sivua
   document.getElementById("osallistujat").innerHTML = osallistujat;
 }
 
 function haeToteutusData() {
+  // Aluksi luodaan URL josta pyydetään GET-pyynnöllä data
+  const URL = "https://devaajanne.github.io/json.github.io/json/toteutus.json";
+
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
-  fetch("https://devaajanne.github.io/json.github.io/json/toteutus.json")
+  fetch(URL)
     // Parseroi JSON-objektin response bodysta
     .then(function (response) {
       return response.json();
@@ -28,6 +36,6 @@ function haeToteutusData() {
     })
     // Jos tapahtuu virhe, näytetään virheilmoitus
     .catch(function (error) {
-      document.getElementById("virhe").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
+      document.getElementById("toteutusVirhe").innerHTML = "<h1 class='text-center'>Tietoa ei pystytä hakemaan</h1>";
     });
 }
