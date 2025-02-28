@@ -1,11 +1,10 @@
 function naytaTapahtumaData(data) {
   var teksti = "<h1>Tampereella tapahtuu</h1>";
   for (var i = 0; i < data.length; i++) {
-    teksti += "<h3>" + data[i].title + "</h3>";
-    teksti += "<p>" + data[i].description + "</p>";
-    teksti += "<p> <a href=" + data[i].url + ">" + data[i].url + "</a></p>";
+    teksti += `<h3>${data[i].title}</h3>`;
+    teksti += `<p>${data[i].description}</p>`;
+    teksti += `<p><a href=${data[i].url}>${data[i].url}</a></p>`;
   }
-
   document.getElementById("tapahtumat").innerHTML = teksti;
 }
 
