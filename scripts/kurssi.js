@@ -4,24 +4,19 @@ function naytaKurssiData(data) {
   document.getElementById("kuva").src = data.kuva;
 
   let opintojaksonTiedot = "<h2>Opintojakson tiedot:</h2><ul>";
-  opintojaksonTiedot += "<li>Nimi: " + data.opintojakso.nimi + "</li>";
-  opintojaksonTiedot += "<li>Tunnus: " + data.opintojakso.tunnus + "</li>";
-  opintojaksonTiedot += "<li>Tunnus: " + data.opintojakso.opintopisteet + "</li></ul>";
+  opintojaksonTiedot += `<li>Nimi: ${data.opintojakso.nimi}</li>`;
+  opintojaksonTiedot += `<li>Tunnus: ${data.opintojakso.tunnus}</li>`;
+  opintojaksonTiedot += `<li>Tunnus: ${data.opintojakso.opintopisteet}</li></ul>`;
   document.getElementById("opintojakso").innerHTML = opintojaksonTiedot;
 
-  let sisaltoJaTekniikatHTML = "<h2>Tekniikat</h2><table>";
+  let sisaltoJaTekniikatHTML = "<h2>Tekniikat</h2><table class='table table-hover'>";
   sisaltoJaTekniikatHTML += "<tr><th>Viikko</th><th>Aihe</th><th>Tekniikka</th><th>Linkki</th></tr>";
   for (let i = 0; i < Object.keys(data.opintojakso.tekniikat).length; i++) {
     sisaltoJaTekniikatHTML += "<tr>";
-    sisaltoJaTekniikatHTML += "<td>" + i + "</td>";
-    sisaltoJaTekniikatHTML += "<td>" + data.opintojakso.sisalto[i] + "</td>";
-    sisaltoJaTekniikatHTML += "<td>" + data.opintojakso.tekniikat[i].aihe + "</td>";
-    sisaltoJaTekniikatHTML +=
-      '<td><a href="' +
-      data.opintojakso.tekniikat[i].linkki +
-      '">' +
-      data.opintojakso.tekniikat[i].linkki +
-      "</a></td></tr>";
+    sisaltoJaTekniikatHTML += `<td>${i}</td>`;
+    sisaltoJaTekniikatHTML += `<td>${data.opintojakso.sisalto[i]}</td>`;
+    sisaltoJaTekniikatHTML += `<td>${data.opintojakso.tekniikat[i].aihe}</td>`;
+    sisaltoJaTekniikatHTML += `<td><a href=${data.opintojakso.tekniikat[i].linkki}>${data.opintojakso.tekniikat[i].linkki}</a></td></tr>`;
   }
   sisaltoJaTekniikatHTML += "</table>";
   document.getElementById("sisaltojatekniikat").innerHTML = sisaltoJaTekniikatHTML;
