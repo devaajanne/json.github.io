@@ -1,12 +1,17 @@
 function naytaSaaData(data) {
-  let saaTiedot = '<div class="card-body"><h2>' + data.name + "</h2><ul>";
-  saaTiedot += "<li>Sää: " + data.weather[0].description + "</li>";
-  saaTiedot += "<li>Lämpötila: " + data.main.temp + " °C</li>";
-  saaTiedot += "<li>Tuulen nopeus: " + data.wind.speed + " m/s</li></ul>";
-  saaTiedot += "<img src='https://openweathermap.org/img/wn/" + data.weather[0].icon + ".png'></div>";
+  let iconURL = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+  let saaTiedot = '<div class="card-body">';
+  saaTiedot += `<h2>${data.name}</h2>`;
+  saaTiedot += "<ul>";
+  saaTiedot += `<li>Sää: ${data.weather[0].description}</li>`;
+  saaTiedot += `<li>Lämpötila: ${data.main.temp} °C</li>`;
+  saaTiedot += `<li>Tuulen nopeus: ${data.wind.speed} m/s</li>`;
+  saaTiedot += "</ul>";
+  saaTiedot += `<img src=${iconURL}>`;
+  saaTiedot += "</div>";
 
   // Tässä määritetään json-datan perusteella mihin HTML-elementtiin saadut tiedot sijoitetaan
-  let HTMLid = (data.name + "saa").toLowerCase();
+  let HTMLid = `${data.name}saa`.toLowerCase(); // helsinkisaa, tamperesaa, oulusaa
 
   document.getElementById(HTMLid).innerHTML = saaTiedot;
 }
@@ -14,14 +19,7 @@ function naytaSaaData(data) {
 function haeSaaData(lat, lon) {
   // Aluksi luodaan URL josta pyydetään GET-pyynnöllä säädata
   const APIKEY = "665ecd56dfc08dbb50feb8b8f5034e28";
-  const URL =
-    "https://api.openweathermap.org/data/2.5/weather?lat=" +
-    lat +
-    "&lon=" +
-    lon +
-    "&appid=" +
-    APIKEY +
-    "&units=metric&lang=fi";
+  const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIKEY}&units=metric&lang=fi`;
 
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
   fetch(URL)
