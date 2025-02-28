@@ -1,17 +1,20 @@
 function naytaLiikennekameraData(data) {
-  let liikennekamerakuvat = "";
+  let liikennekamerakuvat = "<h2>Autolla Tampereelle</h2>"
+  liikennekamerakuvat += `<h3>Millainen keli siellä on ${dayjs(data.dataUpdatedTime).format(
+    "DD.M.YYYY"
+  )}?</h3>`;
 
   for (i = 0; i < data.presets.length; i++) {
-    liikennekamerakuvat += "<h4>" + data.presets[i].measuredTime + "</h4>";
-    liikennekamerakuvat += "<img src='https://weathercam.digitraffic.fi/" + data.presets[i].id + ".jpg'>";
+    let imgURL = `https://weathercam.digitraffic.fi/${data.presets[i].id}.jpg`;
+    liikennekamerakuvat += `<h4>${dayjs(data.presets[i].measuredTime).format("HH.mm")}</h4>`;
+    liikennekamerakuvat += `<img src=${imgURL} class="d-block w-100" style="margin-bottom: 25px;">`;
   }
 
   document.getElementById("liikennekamerat").innerHTML = liikennekamerakuvat;
 }
 
 function haeLiikennekameraData(stationID) {
-  const URL = "https://tie.digitraffic.fi/api/weathercam/v1/stations/" + stationID + "/data";
-  console.log(URL);
+  const URL = `https://tie.digitraffic.fi/api/weathercam/v1/stations/${stationID}/data`;
 
   // Haetaan JSON-tietue osoitteesta GET-http-pyynnöllä
   fetch(URL)
