@@ -23,7 +23,7 @@ function naytaSaaData(data) {
 // Tämä funktio esittää tämän päivän päivämäärän
 function naytaPaiva() {
   const date = new Date();
-  let paiva = `<h2 class="text-center">Päivän sää ${dayjs(date).format("DD.M.YYYY")}</h2>`;
+  let paiva = `<h2 class="text-center">Päivän sää ${dayjs(date).format("D.M.YYYY")}</h2>`;
   document.getElementById("paiva").innerHTML = paiva;
 }
 

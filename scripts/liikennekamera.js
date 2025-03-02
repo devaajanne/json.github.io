@@ -3,7 +3,7 @@ function naytaLiikennekameraData(data) {
   let liikennekamerakuvat = "<h2>Autolla Tampereelle</h2>";
 
   // Päivämäärä oikeaan formaattiin
-  liikennekamerakuvat += `<h3>Millainen keli siellä on ${dayjs(data.dataUpdatedTime).format("DD.M.YYYY")}?</h3>`;
+  liikennekamerakuvat += `<h3>Millainen keli siellä on ${dayjs(data.dataUpdatedTime).format("D.M.YYYY")}?</h3>`;
 
   for (i = 0; i < data.presets.length; i++) {
     let imgURL = `https://weathercam.digitraffic.fi/${data.presets[i].id}.jpg`;

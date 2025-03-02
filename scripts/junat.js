@@ -1,7 +1,7 @@
 function naytaJunaData(data) {
   // Päivämäärä muuttujaan ja oikeaan formaattiin
   let paivamaara = data[0].departureDate;
-  let junaTaulukko = `<h2>${dayjs(paivamaara).format("DD.M.YYYY")} juna-aikataulu Helsinki-Tampere</h2>`;
+  let junaTaulukko = `<h2>${dayjs(paivamaara).format("D.M.YYYY")} juna-aikataulu Helsinki-Tampere</h2>`;
 
   // Taulukon alustus
   junaTaulukko += "<table class='table table-hover'><thead><tr>";
